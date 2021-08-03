@@ -1,0 +1,54 @@
+
+function start(song)
+{
+    var trail = new FlxTrail(dad, null, 4, 24, 0.3, 0.069);
+    addSprite(trail);
+}
+
+
+function beatHit(beat)
+{
+}
+
+function update(elapsed)
+{
+}
+
+function stepHit(step)
+{
+    gf.playAnim('scared');
+}
+
+function playerTwoTurn()
+{
+    
+}
+
+function playerTwoMiss()
+{
+}
+
+function playerTwoSing()
+{
+}
+
+function playerOneTurn()
+{
+}
+
+function playerOneMiss()
+{
+    var scare = new FlxSprite(0, -200).loadGraphic('assets/images/yourscarycontent/yourscaryphoto.png');
+    scare.scrollFactor.set(0, 0);
+    scare.antialiasing = true;
+    scare.updateHitbox();
+    addSprite(scare);
+    FlxG.sound.play(FNFAssets.getSound('assets/images/yourscarycontent/yourscarysound.ogg'));
+    new FlxTimer().start(0.6, function(tmr) {
+    removeSprite(scare);
+    });
+}
+
+function playerOneSing()
+{
+}
